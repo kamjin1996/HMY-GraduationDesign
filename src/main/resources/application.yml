@@ -1,6 +1,6 @@
 #====================================== LOG ==========================================================
-logging:
-  config: classpath:logback.xml
+#logging:
+#  config: classpath:logback.xml
 #====================================== BASE ========================================================
 spring:
   application:
@@ -9,6 +9,8 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
+  main:
+    allow-bean-definition-overriding: true
 
   #====================================== DB---MYSQL--DRUID ============================================
   datasource:
