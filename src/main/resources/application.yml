@@ -1,0 +1,162 @@
+#====================================== LOG ==========================================================
+logging:
+  config: classpath:logback.xml
+#====================================== BASE ========================================================
+spring:
+  application:
+    name: hmy520
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+  #====================================== DB---MYSQL--DRUID ============================================
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useOldAliasMetadataBehavior=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai&useSSL=false
+      username: root
+      password: 123
+      initial-size: 20
+      max-active: 120
+      min-idle: 10
+      max-wait: 10000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+      filters: stat,wall
+      filter:
+        stat:
+          slow-sql-millis: 1000
+          log-slow-sql: true
+      stat-view-servlet:
+        allow:
+        deny:
+        url-pattern: /druid/*
+        reset-enable: true
+        enabled: true
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.gif,*.png,*.jpg,*.html,*.js,*.css,*.ico,/druid/*"
+  #====================================== REDIS ============================================
+  #  redis:
+  #    database: 9
+  #    host: 172.16.94.203
+  #    port: 6379
+  #    password:
+  #    timeout: 3000
+  #    jedis:
+  #      pool:
+  #        max-idle: 10
+  #        max-wait:
+  #        min-idle: 0
+  #====================================== RABBITMQ ============================================
+  #  rabbitmq:
+  #    host: 172.16.94.203
+  #    port: 5672
+  #    username: xdpx
+  #    password: IwVUDV935e4uuJrK
+  #====================================== ZIPKIN ============================================
+#  zipkin:
+#    rabbitmq:
+#      queue: zipkin
+#  sleuth:
+#    sampler:
+#      percentage: 0.1
+#  servlet:
+#    multipart:
+#      max-file-size: 10MB
+#      max-request-size: 100MB
+
+#====================================== MYBATIS-PLUS ============================================
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.zxx.hym520.hmygraduationdesign.domain.model
+  global-config:
+    id-type: 0
+    field-strategy: 1
+    db-column-underline: true
+    refresh-mapper: false
+    is-capital-mode: true
+
+server:
+  port: 9527
+
+#====================================== EUREKA ============================================
+#eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: 30
+#    lease-expiration-duration-in-seconds: 60
+#    prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#  client:
+#    serviceUrl:
+#      defaultZone: http://172.16.94.203:3000/eureka/
+#    registry-fetch-interval-seconds: 10
+
+#====================================== FEIGN ============================================
+#feign:
+#  hystrix:
+#    enabled: true
+#  client:
+#    config:
+#      feignName:
+#        connectTimeout: 30000
+#        readTimeout: 30000
+#  compression:
+#    request:
+#      enabled: true
+#    response:
+#      enabled: true
+
+
+#====================================== RIBBON ============================================
+#ribbon:
+#  eureka:
+#    enabled: true
+#  ReadTimeout: 100000
+#  ConnectTimeout: 100000
+#  MaxAutoRetries: 0
+#  MaxAutoRetriesNextServer: 1
+#  OkToRetryOnAllOperations: false
+
+#====================================== HYSTRIX ============================================
+#hystrix:
+#  threadpool:
+#    default:
+#      coreSize: 1000 #并发执行的最大线程数，默认10
+#      maxQueueSize: 1000 #BlockingQueue的最大队列数
+#      queueSizeRejectionThreshold: 500 #即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 110000
+#====================================== XXL-JOB ============================================
+#xxl:
+#  job:
+#    admin:
+#      address: http://47.97.166.22:5000/
+#    executor:
+#      appName: ${spring.application.name}
+#      ip:
+#      port: 5009
+#      logpath:
+#      logretentiondays: 3
+#    accessToken:
+#====================================== SWAGGER ============================================
+swagger:
+  enabled: true
+  title: 毕业设计-API
+  version: v-1.0.0
+  docket:
+    quote-api:
+      title: 毕业设计-前端API
+      version: v-1.0.0
+      basePackage: com.zxx.hym520.hmygraduationdesign.controller.open.api
