@@ -14,9 +14,8 @@ import org.springframework.context.annotation.Profile;
  * @description: Mybatis Plus配置
  */
 @Configuration
-@MapperScan("com.zxx.hym520.hmygraduationdesign.mapper")
+@MapperScan("com.zxx.hmy520.graduationdesign.mapper")
 public class MybatisPlusConfig {
-
 
     /**
      * mybatis-plus SQL执行效率插件【生产环境可以关闭】
