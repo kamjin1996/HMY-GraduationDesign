@@ -29,8 +29,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("HMY-GraduationDesign的api文档")
-                .description("简单优雅的Restful风格，https://blog.csdn.net/zx156955")
+                .title("open-API文档")
+                .description("简单优雅的restful风格，https://blog.csdn.net/zx156955")
                 //.termsOfServiceUrl("https://blog.csdn.net/zx156955")
                 .contact(new Contact("kam","https://blog.csdn.net/zx156955","kamjin1996@163.com"))
                 .version("1.0")
