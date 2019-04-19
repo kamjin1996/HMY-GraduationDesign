@@ -1,11 +1,5 @@
 package com.zxx.hmy520.graduationdesign.controller;
 
-/**
- * @auther: kam
- * @date: 16:14 2019-04-18
- * @description: 测试接口
- */
-
 import com.zxx.hmy520.graduationdesign.base.controller.BaseController;
 import com.zxx.hmy520.graduationdesign.base.controller.result.Result;
 import io.swagger.annotations.Api;
