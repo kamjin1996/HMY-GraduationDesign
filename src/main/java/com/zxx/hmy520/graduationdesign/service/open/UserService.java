@@ -1,6 +1,5 @@
 package com.zxx.hmy520.graduationdesign.service.open;
 
-
 import com.baomidou.mybatisplus.plugins.Page;
 import com.zxx.hmy520.graduationdesign.domain.model.User;
 import com.zxx.hmy520.graduationdesign.domain.query.UserQuery;
@@ -8,7 +7,7 @@ import com.zxx.hmy520.graduationdesign.base.mysql.service.BaseService;
 
 /**
  * <p>
- *  服务类
+ * 用户账号 服务类
  * </p>
  *
  * @author kam

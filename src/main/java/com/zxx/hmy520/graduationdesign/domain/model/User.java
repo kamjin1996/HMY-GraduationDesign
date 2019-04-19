@@ -1,36 +1,42 @@
 package com.zxx.hmy520.graduationdesign.domain.model;
 
 import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableId;
 import com.zxx.hmy520.graduationdesign.base.mysql.model.BaseModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ * 用户账号
  * </p>
  *
  * @author kam
  * @since 2019-04-19
  */
 @Data
-@ApiModel("")
+@ApiModel("用户账号")
 public class User extends BaseModel {
 
     private static final long serialVersionUID = 1L;
 
-    @TableField("username")
-    @ApiModelProperty("")
-    private String username;
+    /**
+     * 用户名称
+     */
+    @TableField("user_name")
+    @ApiModelProperty("用户名称")
+    private String userName;
+    /**
+     * 密码
+     */
     @TableField("password")
-    @ApiModelProperty("")
+    @ApiModelProperty("密码")
     private String password;
+    /**
+     * 年龄
+     */
     @TableField("age")
-    @ApiModelProperty("")
+    @ApiModelProperty("年龄")
     private Integer age;
 
 

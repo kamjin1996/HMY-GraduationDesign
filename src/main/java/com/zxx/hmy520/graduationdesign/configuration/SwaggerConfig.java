@@ -11,7 +11,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 /**
- * @auther: kam
+ * @author: kam
  * @date: 11:06 2019-04-19
  * @description: Swagger配置
  */
@@ -29,9 +29,9 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("SpringBoot利用Swagger构建api文档")
+                .title("HMY-GraduationDesign的api文档")
                 .description("简单优雅的Restful风格，https://blog.csdn.net/zx156955")
-                .termsOfServiceUrl("https://blog.csdn.net/zx156955")
+                //.termsOfServiceUrl("https://blog.csdn.net/zx156955")
                 .contact(new Contact("kam","https://blog.csdn.net/zx156955","kamjin1996@163.com"))
                 .version("1.0")
                 .build();

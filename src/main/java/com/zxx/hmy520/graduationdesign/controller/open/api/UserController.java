@@ -16,7 +16,7 @@ import com.zxx.hmy520.graduationdesign.base.controller.BaseController;
 
 /**
  * <p>
- *  前端控制器
+ * 用户账号 前端控制器
  * </p>
  *
  * @author kam
@@ -24,7 +24,7 @@ import com.zxx.hmy520.graduationdesign.base.controller.BaseController;
  */
 @RestController
 @RequestMapping("/user")
-@Api(value = "UserController", tags = "【】")
+@Api(value = "UserController", tags = "【用户账号】")
 public class UserController extends BaseController {
 
     @Autowired
