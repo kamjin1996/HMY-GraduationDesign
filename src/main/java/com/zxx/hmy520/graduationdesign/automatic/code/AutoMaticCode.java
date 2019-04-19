@@ -29,13 +29,13 @@ public class AutoMaticCode {
     }
 
     public void generateCode() {
-        String packageName = "com.zxx.hym520.hmygraduationdesign";
-        String outputDir = "D:\\NewWorkSpace\\hmy-graduation-design\\src\\main\\java";
+        String packageName = "com.zxx.hmy520.graduationdesign";
+        String outputDir = "D:\\NewWorkSpace\\HMY-GraduationDesign\\src\\main\\java";
         String dbUrl = "jdbc:mysql://localhost:3306";
         String userName = "root";
-        String password = "123456";
+        String password = "123";
         String[] tableNames = {
-                "adjust_dictionary"
+                "user"
         };
         generateByTables(userName, password, dbUrl, outputDir, packageName, tableNames);
     }
@@ -56,11 +56,11 @@ public class AutoMaticCode {
                 .setInclude(tableNames)//修改替换成你需要的表名，多个表名传数组
                 .entityTableFieldAnnotationEnable(true)
                 .setEntityLombokModel(true)
-                .setSuperControllerClass("com.zxx.hym520.hmygraduationdesign.base.controller.BaseController")
-                .setSuperEntityClass("com.zxx.hym520.hmygraduationdesign.base.mysql.model.BaseModel")
+                .setSuperControllerClass("com.zxx.hmy520.graduationdesign.base.controller.BaseController")
+                .setSuperEntityClass("com.zxx.hmy520.graduationdesign.base.mysql.model.BaseModel")
                 .setSuperEntityColumns("id")
-                .setSuperServiceClass("com.hzxdpx.xdpx.common.mysql.service.BaseService")
-                .setSuperServiceImplClass("com.hzxdpx.xdpx.common.mysql.service.BaseServiceImpl")
+                .setSuperServiceClass("com.zxx.hmy520.graduationdesign.base.mysql.service.BaseService")
+                .setSuperServiceImplClass("com.zxx.hmy520.graduationdesign.base.mysql.service.BaseServiceImpl")
                 .setRestControllerStyle(true);
 
         config.setActiveRecord(false)
