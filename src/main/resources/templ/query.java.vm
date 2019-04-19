@@ -3,7 +3,7 @@
 package ${basePackge}.query;
 
 import ${package.Entity}.${entity};
-import com.zxx.hym520.hmygraduationdesign.base.mysql.page.PageHelp ;
+import com.zxx.hmy520.graduationdesign.base.mysql.page.PageHelp;
 import io.swagger.annotations.ApiModel;
 #if(${entityLombokModel})
 import lombok.Data;

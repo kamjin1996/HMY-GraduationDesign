@@ -19,7 +19,6 @@ import java.util.Map;
  * @Description: 代码生成启动类
  * @date 2018/5/9 15:20
  */
-
 @SpringBootApplication
 public class AutoMaticCode {
 
@@ -31,7 +30,7 @@ public class AutoMaticCode {
     public void generateCode() {
         String packageName = "com.zxx.hmy520.graduationdesign";
         String outputDir = "D:\\NewWorkSpace\\HMY-GraduationDesign\\src\\main\\java";
-        String dbUrl = "jdbc:mysql://localhost:3306";
+        String dbUrl = "jdbc:mysql://localhost:3306/mytest";
         String userName = "root";
         String password = "123";
         String[] tableNames = {

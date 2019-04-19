@@ -2,7 +2,7 @@ package ${package.Controller};
 
 import com.baomidou.mybatisplus.plugins.Page;
 
-import com.zxx.hym520.hmygraduationdesign.base.controller.result;
+import com.zxx.hmy520.graduationdesign.base.controller.result.Result;
 #set($lastIndexOf=${package.Entity.lastIndexOf('.')})
 #set($basePackge=${package.Entity.substring(0,$lastIndexOf)})
 import ${basePackge}.query.${entity}Query;

@@ -25,6 +25,7 @@ public class TestController extends BaseController {
     @ApiResponse(code = 200, message = "success", response = Result.class)
     public Result<Object> hello() {
         String hello = "你好，测试~";
+
         return response(hello);
     }
 
