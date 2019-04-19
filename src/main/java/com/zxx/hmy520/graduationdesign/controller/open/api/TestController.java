@@ -24,7 +24,8 @@ public class TestController extends BaseController {
     @ApiOperation(value = "测试接口", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiResponse(code = 200, message = "success", response = Result.class)
     public Result<Object> hello() {
-        String hello = "你好，测试~";
+
+        String hello = "你好，测试";
 
         return response(hello);
     }

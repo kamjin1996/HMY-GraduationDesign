@@ -2,8 +2,16 @@
 logging:
   config: classpath:logback.xml
 #====================================== BASE ========================================================
+#热部署生效
 
 spring:
+  thymeleaf:
+    cache: false
+
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
   mvc:
     static-path-pattern: /static/**
 
