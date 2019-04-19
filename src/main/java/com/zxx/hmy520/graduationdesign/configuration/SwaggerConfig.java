@@ -6,6 +6,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
@@ -28,9 +29,10 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springboot利用swagger构建api文档")
-                .description("简单优雅的restfun风格，https://blog.csdn.net/zx156955")
+                .title("SpringBoot利用Swagger构建api文档")
+                .description("简单优雅的Restful风格，https://blog.csdn.net/zx156955")
                 .termsOfServiceUrl("https://blog.csdn.net/zx156955")
+                .contact(new Contact("kam","https://blog.csdn.net/zx156955","kamjin1996@163.com"))
                 .version("1.0")
                 .build();
     }

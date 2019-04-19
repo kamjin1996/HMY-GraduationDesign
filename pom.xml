@@ -89,6 +89,7 @@
             <version>1.9.1</version>
         </dependency>
 
+        <!--Rabbit MQ-->
         <dependency>
             <groupId>org.springframework.amqp</groupId>
             <artifactId>spring-rabbit</artifactId>

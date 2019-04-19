@@ -157,12 +157,13 @@ server:
 #      logretentiondays: 3
 #    accessToken:
 #====================================== SWAGGER ============================================
-swagger:
-  enabled: true
-  title: 毕业设计-API
-  version: v-1.0.0
-  docket:
-    all-api:
-      title: 毕业设计-前端API
-      version: v-1.0.0
-      basePackage: com.zxx.hmy520.graduationdesign.controller.open.api
+#swagger:
+#  enabled: true
+#  title: 毕业设计-API
+#  version: v-1.0.0
+#  docket:
+#    all-api:
+#      title: 毕业设计-前端API
+#      version: v-1.0.0
+#      basePackage: com.zxx.hmy520.graduationdesign.controller.open.api
+
