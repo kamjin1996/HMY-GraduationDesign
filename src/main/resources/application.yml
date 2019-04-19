@@ -91,7 +91,7 @@ mybatis-plus:
     is-capital-mode: true
 
 server:
-  port: 4000
+  port: 8080
 
 #====================================== EUREKA ============================================
 #eureka:
