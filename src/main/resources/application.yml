@@ -2,7 +2,11 @@
 logging:
   config: classpath:logback.xml
 #====================================== BASE ========================================================
+
 spring:
+  mvc:
+    static-path-pattern: /static/**
+
   application:
     name: hmy520
   jackson:
@@ -87,7 +91,7 @@ mybatis-plus:
     is-capital-mode: true
 
 server:
-  port: 9527
+  port: 4000
 
 #====================================== EUREKA ============================================
 #eureka:

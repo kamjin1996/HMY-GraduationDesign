@@ -11,7 +11,8 @@
     <groupId>com.zxx.hmy520</groupId>
     <artifactId>graduationdesign</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>HMY-GraduationDesign</name>
+    <!--<name>HMY-GraduationDesign</name>-->
+    <name>hmy520</name>
     <description>HMY-GraduationDesign</description>
 
     <properties>
