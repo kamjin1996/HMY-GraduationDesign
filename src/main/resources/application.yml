@@ -158,7 +158,7 @@ swagger:
   title: 毕业设计-API
   version: v-1.0.0
   docket:
-    quote-api:
+    all-api:
       title: 毕业设计-前端API
       version: v-1.0.0
-      basePackage: com.zxx.hym520.hmygraduationdesign.controller.open.api
+      basePackage: com.zxx.hmy520.graduationdesign.controller.open.api

@@ -1,4 +1,4 @@
-package com.zxx.hmy520.graduationdesign.controller;
+package com.zxx.hmy520.graduationdesign.controller.open.api;
 
 import com.zxx.hmy520.graduationdesign.base.controller.BaseController;
 import com.zxx.hmy520.graduationdesign.base.controller.result.Result;
