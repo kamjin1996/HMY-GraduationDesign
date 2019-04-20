@@ -22,10 +22,10 @@ import java.util.Map;
 @SpringBootApplication
 public class AutoMaticCode {
 
-    public static void main(String[] args) {
-        AutoMaticCode generator = new AutoMaticCode();
-        generator.generateCode();
-    }
+    //public static void main(String[] args) {
+    //    AutoMaticCode generator = new AutoMaticCode();
+    //    generator.generateCode();
+    //}
 
     public void generateCode() {
         String packageName = "com.zxx.hmy520.graduationdesign";
