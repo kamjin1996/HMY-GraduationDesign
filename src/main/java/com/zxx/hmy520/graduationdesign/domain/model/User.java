@@ -1,6 +1,8 @@
 package com.zxx.hmy520.graduationdesign.domain.model;
 
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.zxx.hmy520.graduationdesign.base.mysql.model.BaseModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -12,7 +14,7 @@ import lombok.Data;
  * </p>
  *
  * @author kam
- * @since 2019-04-19
+ * @since 2019-04-20
  */
 @Data
 @ApiModel("用户账号")
@@ -27,17 +29,29 @@ public class User extends BaseModel {
     @ApiModelProperty("用户名称")
     private String userName;
     /**
-     * 密码
+     * 用户头像
      */
-    @TableField("password")
-    @ApiModelProperty("密码")
-    private String password;
+    @TableField("logo")
+    @ApiModelProperty("用户头像")
+    private String logo;
     /**
-     * 年龄
+     * 账户密码
+     */
+    @TableField("pass_word")
+    @ApiModelProperty("账户密码")
+    private String passWord;
+    /**
+     * 用户性别
      */
     @TableField("age")
-    @ApiModelProperty("年龄")
+    @ApiModelProperty("用户性别")
     private Integer age;
+    /**
+     * 手机号码
+     */
+    @TableField("mobile")
+    @ApiModelProperty("手机号码")
+    private String mobile;
 
 
 }

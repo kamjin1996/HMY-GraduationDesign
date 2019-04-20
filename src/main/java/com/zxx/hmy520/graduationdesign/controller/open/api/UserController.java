@@ -20,7 +20,7 @@ import com.zxx.hmy520.graduationdesign.base.controller.BaseController;
  * </p>
  *
  * @author kam
- * @since 2019-04-19
+ * @since 2019-04-20
  */
 @RestController
 @RequestMapping("/user")

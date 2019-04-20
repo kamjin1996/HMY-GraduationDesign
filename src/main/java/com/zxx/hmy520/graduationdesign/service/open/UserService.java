@@ -1,5 +1,6 @@
 package com.zxx.hmy520.graduationdesign.service.open;
 
+
 import com.baomidou.mybatisplus.plugins.Page;
 import com.zxx.hmy520.graduationdesign.domain.model.User;
 import com.zxx.hmy520.graduationdesign.domain.query.UserQuery;
@@ -11,7 +12,7 @@ import com.zxx.hmy520.graduationdesign.base.mysql.service.BaseService;
  * </p>
  *
  * @author kam
- * @since 2019-04-19
+ * @since 2019-04-20
  */
 public interface UserService extends BaseService<User> {
 

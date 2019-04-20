@@ -30,9 +30,9 @@ public class AutoMaticCode {
     public void generateCode() {
         String packageName = "com.zxx.hmy520.graduationdesign";
         String outputDir = "D:\\NewWorkSpace\\HMY-GraduationDesign\\src\\main\\java";
-        String dbUrl = "jdbc:mysql://localhost:3306/mytest";
+        String dbUrl = "jdbc:mysql://47.97.253.147:3306/zxx";
         String userName = "root";
-        String password = "123";
+        String password = "root";
         String[] tableNames = {
                 "user"
         };
