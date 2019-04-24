@@ -1,0 +1,58 @@
+package ${package.ServiceImpl};
+
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.plugins.Page;
+import ${package.Entity}.${entity};
+#set($lastIndexOf=${package.Entity.lastIndexOf('.')})
+#set($basePackge=${package.Entity.substring(0,$lastIndexOf)})
+import ${basePackge}.query.${entity}Query;
+import ${package.Mapper}.${table.mapperName};
+import ${package.Service}.${table.serviceName};
+import ${superServiceImplClassPackage};
+import org.springframework.stereotype.Service;
+
+/**
+ * <p>
+ * $!{table.comment} 服务实现类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Service
+#if(${kotlin})
+open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperName}, ${entity}>(), ${table.serviceName} {
+
+}
+#else
+public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
+
+    @Override
+    public ${entity} findById(Long id) {
+        return this.selectById(id);
+    }
+
+    @Override
+    public Page<${entity}> findByPage(${entity}Query query) {
+        Wrapper<${entity}> wrapper = new EntityWrapper<>();
+        return this.selectPage(query.getPage(), wrapper);
+    }
+
+    @Override
+    public void delete(Long id) {
+        this.deleteById(id);
+    }
+
+    @Override
+    public boolean add(${entity} ${table.entityPath}) {
+        return this.insert(${table.entityPath});
+    }
+
+    @Override
+    public boolean update(${entity} ${table.entityPath}) {
+        return this.updateById(${table.entityPath});
+    }
+
+}
+#end

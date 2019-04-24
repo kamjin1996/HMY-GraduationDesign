@@ -7,11 +7,11 @@ import com.zxx.hmy520.graduationdesign.domain.query.UserQuery;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import com.zxx.hmy520.graduationdesign.domain.model.User;
 import com.zxx.hmy520.graduationdesign.service.open.UserService;
 
-import org.springframework.web.bind.annotation.RestController;
 import com.zxx.hmy520.graduationdesign.base.controller.BaseController;
 
 /**
@@ -22,7 +22,7 @@ import com.zxx.hmy520.graduationdesign.base.controller.BaseController;
  * @author kam
  * @since 2019-04-20
  */
-@RestController
+@Controller
 @RequestMapping("/user")
 @Api(value = "UserController", tags = "【用户账号】")
 public class UserController extends BaseController {

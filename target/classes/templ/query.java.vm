@@ -1,0 +1,29 @@
+#set($lastIndexOf=${package.Entity.lastIndexOf('.')})
+#set($basePackge=${package.Entity.substring(0,$lastIndexOf)})
+package ${basePackge}.query;
+
+import ${package.Entity}.${entity};
+import com.zxx.hmy520.graduationdesign.base.mysql.page.PageHelp;
+import io.swagger.annotations.ApiModel;
+#if(${entityLombokModel})
+import lombok.Data;
+#end
+
+/**
+ * <p>
+ * $!{table.comment}分页查询
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+#if(${entityLombokModel})
+@Data
+#end
+@ApiModel("${table.comment}分页查询")
+public class ${entity}Query extends PageHelp<${entity}> {
+
+    private static final long serialVersionUID = 1L;
+
+
+}

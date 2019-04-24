@@ -6,25 +6,30 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @auther: kam
  * @date: 8:38 2019-04-18
  * @description: 测试接口
  */
-@RestController
+@Controller
 @RequestMapping("/test")
 @Api(value = "TestController", tags = "【测试接口】")
 public class TestController extends BaseController {
 
+    /**
+     * 你好
+     *
+     * @return
+     */
     @GetMapping(value = "/hello", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiOperation(value = "测试接口", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "你好", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiResponse(code = 200, message = "success", response = Result.class)
     public Result<Object> hello() {
-        String hello = "你好，测试aaaaaaa";
+        String hello = "Hello. Welcome join my world!";
         return response(hello);
     }
 
