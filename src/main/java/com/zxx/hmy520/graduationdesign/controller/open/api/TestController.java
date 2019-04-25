@@ -9,13 +9,14 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @auther: kam
  * @date: 8:38 2019-04-18
  * @description: 测试接口
  */
-@Controller
+@RestController
 @RequestMapping("/test")
 @Api(value = "TestController", tags = "【测试接口】")
 public class TestController extends BaseController {

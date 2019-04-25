@@ -9,7 +9,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 @EnableSwagger2
-@EnableWebMvc
 @EnableWebSecurity
 @SpringBootApplication
 public class HmyGraduationDesignApplication {

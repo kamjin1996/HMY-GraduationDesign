@@ -9,7 +9,7 @@ debug: false
 spring:
   devtools:
     restart:
-      enabled: false
+      enabled: true
 
 #页面不加载缓存，修改即时生效
   freemarker:
@@ -19,7 +19,8 @@ spring:
   mvc:
     static-path-pattern: /**
 
-#项目名称
+
+  #项目名称
   application:
     name: hmy520
 
@@ -109,9 +110,6 @@ mybatis-plus:
 
 server:
   port: 80
-  servlet:
-    context-path: /hmy520
-  address: hmy520.art
 
 #====================================== EUREKA ============================================
 #eureka:

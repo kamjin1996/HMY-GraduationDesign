@@ -3,25 +3,85 @@
 
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 		<title>首页</title>
 		<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#leftWoodContrl").click(function() {
+					$("#leftWood").toggle();
+				})
+				$("#rightWoodContrl").click(function() {
+					$("#rightWood").toggle();
+				})
+
+				$("#debugbtn").click(function() {
+					if($("img").css("position") == "absolute") {
+						$("img").css("position", "fixed");
+						alert("已切换为fixed>>>>>>>>>>>>>>>>>>>>>")
+					} else {
+						$("img").css("position", "absolute");
+						alert("已切换为absolute>>>>>>>>>>>>>>>>>>>>>>>>")
+					}
+
+				})
+
+			});
 		</script>
 		<style type="text/css">
-			img {
-				position: absolute;
+			#title {
+				color: #E4606D;
+			}
+			
+			#background1 {
+				position: fixed;
+				left: 100px;
+				top: 80px;
+			}
+			
+			#headAngle {
+				position: fixed;
 				left: 300px;
-				top: 150px;
+				top: 360px;
+			}
+			
+			#leftWood {
+				/*width:150px;height:60px;*/
+				width: 300px;
+				height: 120px;
+				position: fixed;
+				left: 10px;
+				top: 650px;
+			}
+			
+			#rightWood {
+				/*width:150px;height:60px;*/
+				width: 300px;
+				height: 120px;
+				position: fixed;
+				left: 640px;
+				top: 650px;
 			}
 		</style>
 	</head>
 
 	<body>
-		<p>Hello. Welcome join...</p>
+			<div id="title">
+			Hello. Welcome join...
+			<br/>
+			<button id="debugbtn">调试按钮-点击切换positon/fixed属性</button>
+			<br/>
+				<button id="leftWoodcontrol" class="wood">leftcontrol</button>
+				<button id="rightWoodControl" class="wood">rightcontrol</button>
+
+			</div>
+			
 		<img id="background1" src="img/trythetrash/background1.gif" />
 		<img id="headAngle" src="img/trythetrash/headAngle.gif">
+
 		<img id="leftWood" src="img/trythetrash/leftWood.png" />
 		<img id="rightWood" src="img/trythetrash/rightWood.png" />
+
 	</body>
 
 </html>
