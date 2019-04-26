@@ -1,87 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-		<title>首页</title>
-		<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+		<title>山药紫薯糕</title>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+		<script src="js/jquery-3.3.1.min.js"></script>
+
+		<!--
+			作者：kamjin1996@163.com
+			时间：2019-04-26
+			描述：控制动效及事件
+		-->
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$("#leftWoodContrl").click(function() {
-					$("#leftWood").toggle();
-				})
-				$("#rightWoodContrl").click(function() {
-					$("#rightWood").toggle();
-				})
 
-				$("#debugbtn").click(function() {
-					if($("img").css("position") == "absolute") {
-						$("img").css("position", "fixed");
-						alert("已切换为fixed>>>>>>>>>>>>>>>>>>>>>")
+				var leftIsHiden = true; /*控制切换菜单*/
+				$('#leftWood').click(function() {
+					if(leftIsHiden) {
+						$('#leftWood').animate({
+							left: '+=30%' //向右移动
+						});
 					} else {
-						$("img").css("position", "absolute");
-						alert("已切换为absolute>>>>>>>>>>>>>>>>>>>>>>>>")
+						$('#leftWood').animate({
+							left: '-=30%' //向左移动
+						});
 					}
+					leftIsHiden = !leftIsHiden;
+				});
 
-				})
-
+				var rightIsHiden = true; /*控制切换菜单*/
+				$('#rightWood').click(function() {
+					if(rightIsHiden) {
+						$('#rightWood').animate({
+							left: '-=30%'
+						}); //向左移动
+					} else {
+						$('#rightWood').animate({
+							left: '+=30%'
+						}); //向右移动
+					}
+					rightIsHiden = !rightIsHiden;
+				});
 			});
 		</script>
+
+		<!--
+        	作者：kamjin1996@163.com
+        	时间：2019-04-26
+        	描述：CSS3控制大小以及位置
+        -->
 		<style type="text/css">
-			#title {
-				color: #E4606D;
+			html,
+			body {
+				width: 0%;
+				margin: 0%;
+				padding: 0%;
+				overflow: hidden;
+				overflow-y: auto;
 			}
 			
 			#background1 {
-				position: fixed;
-				left: 100px;
-				top: 80px;
+				/*定位*/
+				margin-left: 0%;
+				margin-top: 0%;
+				/*大小*/
+				width: 100%;
+				height: 100%;
+				position: absolute;
 			}
 			
 			#headAngle {
-				position: fixed;
-				left: 300px;
-				top: 360px;
+				/*定位*/
+				margin-left: 32%;
+				margin-top: 41%;
+				/*大小*/
+				width: 36%;
+				height: 8%;
+				position: absolute;
 			}
 			
 			#leftWood {
-				/*width:150px;height:60px;*/
-				width: 300px;
-				height: 120px;
-				position: fixed;
-				left: 10px;
-				top: 650px;
+				/*定位*/
+				/*margin-left: 0%;*/
+				margin-left: -31%;
+				margin-top: 65%;
+				/*大小*/
+				width: 45%;
+				height: 23%;
+				position: absolute;
 			}
 			
 			#rightWood {
-				/*width:150px;height:60px;*/
-				width: 300px;
-				height: 120px;
-				position: fixed;
-				left: 640px;
-				top: 650px;
+				/*定位*/
+				/*margin-left: 58%;*/
+				margin-left: 88%;
+				margin-top: 65%;
+				/*大小*/
+				width: 45%;
+				height: 23%;
+				position: absolute;
 			}
 		</style>
+
 	</head>
 
 	<body>
-			<div id="title">
-			Hello. Welcome join...
-			<br/>
-			<button id="debugbtn">调试按钮-点击切换positon/fixed属性</button>
-			<br/>
-				<button id="leftWoodcontrol" class="wood">leftcontrol</button>
-				<button id="rightWoodControl" class="wood">rightcontrol</button>
-
-			</div>
-			
 		<img id="background1" src="img/trythetrash/background1.gif" />
-		<img id="headAngle" src="img/trythetrash/headAngle.gif">
-
+		<img id="headAngle" src="img/trythetrash/headAngle.gif" />
 		<img id="leftWood" src="img/trythetrash/leftWood.png" />
 		<img id="rightWood" src="img/trythetrash/rightWood.png" />
-
 	</body>
 
 </html>
