@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>hmy520 Create By kam.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--由于移动设备的屏幕很小，在第一次打开网页时，有些浏览器可能不会按照响应式布局进行展示，而是按照原来页面的大小，用户可以通过滑动，或者缩放来调整页面位置，大小，这样我们的响应式开发就没有用处，加上这就话就是，页面加载后宽度和物理设备的宽度一致，并且无缩放-->
+
+		<!--<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--由于IE浏览器并不能很好的支持bt，所以这就话的意思是告诉IE浏览器，用最新的渲染方式加载页面-->
+
+		<!-- Bootstrap -->
+		<!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
+
+		<!--<script src="jquery/jquery-3.3.1.min.js"></script>-->
+		<!--<script src="bootstrap/js/bootstrap.js"></script>-->
+		<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+
+		<!--
+			作者：kamjin1996@163.com
+			时间：2019-04-26
+			描述：控制动效及事件
+		-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#leaf,#leaf-anim").click(function() {
+					$("body").toggleClass("leaf-anim");
+				});
+				$("#rightDown,#rightDown-anim").click(function() {
+					$("body").toggleClass("rightDown-anim");
+				});
+				$("#leafMove").click(function() {
+					$('#leafMove').addClass('show')
+				});
+			})
+		</script>
+
+		<!--
+        	作者：kamjin1996@163.com
+        	时间：2019-04-26
+        	描述：CSS3控制大小以及位置
+        -->
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			#background1 {
+				/*定位*/
+				margin-left: 0;
+				margin-top: 0;
+				/*大小*/
+				width: 100%;
+				/*position: absolute;*/
+			}
+			
+			#leaf,#leaf-anim {
+				/*定位*/
+				left: 10%;
+				top: 33%;
+				/*大小*/
+				width: 90%;
+				position: absolute;
+			}
+			#leaf-anim{
+				display: none;
+			}
+			body.leaf-anim #leaf{
+				display: none;
+			}
+			body.leaf-anim #leaf-anim{
+				display: block;
+			}
+			
+			#leafMove {
+				/*定位*/
+				/*margin-left: 0%;*/
+				left: 5%;
+				top: 69%;
+				/*大小*/
+				width: 12%;
+				position: absolute;
+				transition: top 5s;
+			}
+			
+			#leafMove.show {
+				top: 99%;
+			}
+			
+			#rightDown,#rightDown-anim {
+				/*定位*/
+				/*margin-left: 58%;*/
+				left: 72%;
+				top: 74%;
+				/*大小*/
+				width: 29%;
+				position: absolute;
+				/*transition: left .5s;*/
+			}
+			#rightDown-anim{
+				display: none;
+			}
+			body.rightDown-anim #rightDown{
+				display: none;
+			}
+			body.rightDown-anim #rightDown-anim{
+				display: block;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<img id="background1" class="img-responsive" src="img/greenBean/green-background.gif" alt="background1" />
+		<img id="leaf" class="img-responsive" src="img/greenBean/centre-leaf_1.png" alt="leaf" />
+		<img id="leaf-anim" class="img-responsive" src="img/greenBean/centre-leaf.gif" alt="leaf" />
+		<img id="leafMove" class="img-responsive" src="img/greenBean/leaf_2x.png" alt="leafMove" />
+		<img id="rightDown" class="img-responsive" src="img/greenBean/rightDown_1.png" alt="rightWood" />
+		<img id="rightDown-anim" class="img-responsive" src="img/greenBean/rightDown.gif" alt="rightWood" />
+	</body>
+
+</html>

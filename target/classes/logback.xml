@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <!--<springProperty scope="context" name="APP_NAME" source="spring.application.name"/>-->
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <!--<springProfile name="dev">-->
+        <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+    <!--</springProfile>-->
+
+    <!--<springProfile name="test">-->
+        <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+    <!--</springProfile>-->
+
+    <!--<appender name="ALIYUN" class="com.hzxdpx.xdpx.common.sms.log.LoghubAppender">-->
+        <!--<endpoint>cn-hangzhou.log.aliyuncs.com</endpoint>-->
+        <!--<accessKeyId>LTAIXEPFwp8sS8Ul</accessKeyId>-->
+        <!--<accessKey>kTNglb0IdVHA3Xpq4ktIagaMeUADZJ</accessKey>-->
+
+        <!--<projectName>xdpx</projectName>-->
+        <!--<logstore>xdpx-java</logstore>-->
+        <!--&lt;!&ndash; 可选项 &ndash;&gt;-->
+        <!--<topic>xdpx</topic>-->
+        <!--<source>${APP_NAME}</source>-->
+        <!--<packageTimeoutInMS>3000</packageTimeoutInMS>-->
+        <!--<logsCountPerPackage>4096</logsCountPerPackage>-->
+        <!--<logsBytesPerPackage>3145728</logsBytesPerPackage>-->
+        <!--<memPoolSizeInByte>104857600</memPoolSizeInByte>-->
+        <!--<retryTimes>3</retryTimes>-->
+        <!--<maxIOThreadSizeInPool>8</maxIOThreadSizeInPool>-->
+
+        <!--<encoder>-->
+            <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--<timeFormat>yyyy-MM-dd HH:mm:ss.SSS</timeFormat>-->
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">&lt;!&ndash; 打印WARN,ERROR级别的日志 &ndash;&gt;-->
+            <!--<level>INFO</level>-->
+        <!--</filter>-->
+    <!--</appender>-->
+
+
+    <!-- 日志输出级别 -->
+    <!--<root level="INFO">-->
+        <!--<springProfile name="prod">-->
+            <!--<appender-ref ref="ALIYUN"/>-->
+        <!--</springProfile>-->
+    <!--</root>-->
+
+</configuration>
