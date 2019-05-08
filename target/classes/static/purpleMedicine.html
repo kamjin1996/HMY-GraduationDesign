@@ -62,7 +62,7 @@
 					if(!startX) return;
 					var X = e.originalEvent.changedTouches[0].pageX - startX;
 					console.log(X)
-					if(X < -100) {
+					if(X < - 30) {
 						if(startRightWoodX) {
 							startRightWoodX = null
 							$('#rightWood').addClass('show')
@@ -70,7 +70,7 @@
 							startLeftWoodX = null
 							$('#leftWood').removeClass('show')
 						}
-					} else if(X > 100) {
+					} else if(X > 30) {
 						if(startRightWoodX) {
 							startRightWoodX = null
 							$('#rightWood').removeClass('show')
