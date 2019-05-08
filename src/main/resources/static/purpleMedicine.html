@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>hmy520 Create By kam.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--由于移动设备的屏幕很小，在第一次打开网页时，有些浏览器可能不会按照响应式布局进行展示，而是按照原来页面的大小，用户可以通过滑动，或者缩放来调整页面位置，大小，这样我们的响应式开发就没有用处，加上这就话就是，页面加载后宽度和物理设备的宽度一致，并且无缩放-->
+
+		<!--<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--由于IE浏览器并不能很好的支持bt，所以这就话的意思是告诉IE浏览器，用最新的渲染方式加载页面-->
+
+		<!-- Bootstrap -->
+		<!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
+
+		<script src="jquery/jquery-3.3.1.min.js"></script>
+		<script src="bootstrap/js/bootstrap.js"></script>
+
+		<!--
+			作者：kamjin1996@163.com
+			时间：2019-04-26
+			描述：控制动效及事件
+		-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				var headAngleClick = true;
+				$("#headAngle").click(function() {
+					if(headAngleClick) {
+						$("#headAngle").attr("src", "img/purpleMedicine/top.gif")
+					} else if(!headAngleClick) {
+						$("#headAngle").attr("src", "img/purpleMedicine/top_1.png")
+					}
+					headAngleClick= !headAngleClick;
+
+				})
+				
+				var rightDownClick = true;
+				$("#rightDown").click(function() {
+					if(rightDownClick) {
+						$("#rightDown").attr("src", "img/purpleMedicine/rigntdown.gif")
+					} else if(!rightDownClick) {
+						$("#rightDown").attr("src", "img/purpleMedicine/rigntdown_1.png")
+					}
+					rightDownClick= !rightDownClick;
+
+				})
+
+				var startRightWoodX, startLeftWoodX;
+
+				$("#rightWood").on("touchstart", function(e) {
+					startRightWoodX = e.originalEvent.changedTouches[0].pageX;
+				});
+
+				$("#leftWood").on("touchstart", function(e) {
+					startLeftWoodX = e.originalEvent.changedTouches[0].pageX;
+				});
+
+				$("body").on("touchmove", function(e) {
+					var startX = startRightWoodX || startLeftWoodX;
+					if(!startX) return;
+					var X = e.originalEvent.changedTouches[0].pageX - startX;
+					console.log(X)
+					if(X < -100) {
+						if(startRightWoodX) {
+							startRightWoodX = null
+							$('#rightWood').addClass('show')
+						} else {
+							startLeftWoodX = null
+							$('#leftWood').removeClass('show')
+						}
+					} else if(X > 100) {
+						if(startRightWoodX) {
+							startRightWoodX = null
+							$('#rightWood').removeClass('show')
+						} else {
+							startLeftWoodX = null
+							$('#leftWood').addClass('show')
+						}
+					}
+				});
+
+				$("body").on("touchend", function(e) {
+					startRightWoodX = null;
+					startLeftWoodX = null;
+				});
+			});
+		</script>
+
+		<!--
+        	作者：kamjin1996@163.com
+        	时间：2019-04-26
+        	描述：CSS3控制大小以及位置
+        -->
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.container-fluid {
+				overflow: hidden;
+			}
+			
+			#background1 {
+				/*定位*/
+				margin-left: 0;
+				margin-top: 0;
+				/*大小*/
+				width: 100%;
+				/*position: absolute;*/
+			}
+			
+			#headAngle {
+				/*定位*/
+				left: 32%;
+				top: 24%;
+				/*大小*/
+				width: 38%;
+		
+				position: absolute;
+			}
+			
+			#leftWood {
+				/*定位*/
+				/*margin-left: 0%;*/
+				left: -31%;
+				top: 30%;
+				/*大小*/
+				width: 45%;
+				position: absolute;
+				transition: left .6s;
+			}
+			
+			#leftWood.show {
+				left: -1%;
+			}
+			
+			#rightWood {
+				/*定位*/
+				/*margin-left: 58%;*/
+				left: 88%;
+				top: 30%;
+				/*大小*/
+				width: 45%;
+				position: absolute;
+				transition: left .6s;
+			}
+			
+			#rightWood.show {
+				left: 58%;
+			}
+			
+			#rightDown {
+				width: 30%;
+				bottom: 8%;
+				left: 68%;
+				position: absolute;
+			}
+			
+			#rightDown_1 {
+				width: 30%;
+				bottom: 8%;
+				left: 68%;
+				position: absolute;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<img id="background1" class="img-responsive" src="img/purpleMedicine/background.gif" alt="background1" />
+			<img id="headAngle" class="img-responsive" src="img/purpleMedicine/top_1.png" alt="headAngle" />
+			<img id="leftWood" class="img-responsive" src="img/purpleMedicine/leftWood-2x.png" alt="leftWood" />
+			<img id="rightWood" class="img-responsive" src="img/purpleMedicine/rightWood-2x.png" alt="rightWood" />
+			<img id="rightDown" class="img-responsive" src="img/purpleMedicine/rigntdown_1.png" alt="rightDown">
+		</div>
+	</body>
+
+</html>
