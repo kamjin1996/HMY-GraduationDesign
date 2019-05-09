@@ -114,17 +114,35 @@
 			body.rightDown-anim #rightDown-anim{
 				display: block;
 			}
+			.body{
+				position: relative;
+				transform: translateY(calc(50vh - 50%));
+				max-width: 768px;
+    			margin: auto;
+			}
+			.top-color-block{
+				background: #FB5635;
+				height: 50%;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				max-width: 768px;
+				transform: translateX(calc(50vw - 50%));
+			}
 		</style>
 
 	</head>
 
 	<body>
-		<img id="background1" class="img-responsive" src="img/greenBean/green-background.gif" alt="background1" />
-		<img id="leaf" class="img-responsive" src="img/greenBean/centre-leaf_1.png" alt="leaf" />
-		<img id="leaf-anim" class="img-responsive" src="img/greenBean/centre-leaf.gif" alt="leaf" />
-		<img id="leafMove" class="img-responsive" src="img/greenBean/leaf_2x.png" alt="leafMove" />
-		<img id="rightDown" class="img-responsive" src="img/greenBean/rightDown_1.png" alt="rightWood" />
-		<img id="rightDown-anim" class="img-responsive" src="img/greenBean/rightDown.gif" alt="rightWood" />
+		<div class="top-color-block"></div>
+		<div class="body">
+			<img id="background1" class="img-responsive" src="img/greenBean/green-background.gif" alt="background1" />
+			<img id="leaf" class="img-responsive" src="img/greenBean/centre-leaf_1.png" alt="leaf" />
+			<img id="leaf-anim" class="img-responsive" src="img/greenBean/centre-leaf.gif" alt="leaf" />
+			<img id="leafMove" class="img-responsive" src="img/greenBean/leaf_2x.png" alt="leafMove" />
+			<img id="rightDown" class="img-responsive" src="img/greenBean/rightDown_1.png" alt="rightWood" />
+			<img id="rightDown-anim" class="img-responsive" src="img/greenBean/rightDown.gif" alt="rightWood" />
+		</div>
 	</body>
 
 </html>
