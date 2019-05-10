@@ -3,19 +3,19 @@
 <html>
 
 	<head>
-		<title>hmy520 Create By kam.</title>
+		<title>红豆薏米糕</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--由于移动设备的屏幕很小，在第一次打开网页时，有些浏览器可能不会按照响应式布局进行展示，而是按照原来页面的大小，用户可以通过滑动，或者缩放来调整页面位置，大小，这样我们的响应式开发就没有用处，加上这就话就是，页面加载后宽度和物理设备的宽度一致，并且无缩放-->
 
-		<!--<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!--由于IE浏览器并不能很好的支持bt，所以这就话的意思是告诉IE浏览器，用最新的渲染方式加载页面-->
 
 		<!-- Bootstrap -->
 		<!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
 
-		<script src="jquery/jquery-3.3.1.min.js"></script>
-		<script src="bootstrap/js/bootstrap.js"></script>
+		<!--<script src="jquery/jquery-3.3.1.min.js"></script>-->
+		<!--<script src="bootstrap/js/bootstrap.js"></script>-->
+		<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
 
 		<!--
 			作者：kamjin1996@163.com
@@ -24,44 +24,35 @@
 		-->
 		<script type="text/javascript">
 			$(document).ready(function() {
-				var startRightWoodX,startLeftWoodX;
 
-				$("#rightWood").on("touchstart", function(e) {
-					startRightWoodX = e.originalEvent.changedTouches[0].pageX;
-				});
-				
-				$("#leftWood").on("touchstart", function(e) {
-					startLeftWoodX = e.originalEvent.changedTouches[0].pageX;
+				$("#rightDown,#rightDown-anim").click(function() {
+					$("body").toggleClass("rightDown-anim");
 				});
 
-				$("body").on("touchmove", function(e) {
-					var startX = startRightWoodX || startLeftWoodX;
-					if(!startX) return;
-					var X = e.originalEvent.changedTouches[0].pageX - startX;
-					console.log(X)
-					if(X < -100) {
-						if(startRightWoodX){
-							startRightWoodX = null
-							$('#rightWood').addClass('show')
-						}else{
-							startLeftWoodX = null
-							$('#leftWood').removeClass('show')
-						}
-					}else if(X > 100){
-						if(startRightWoodX){
-							startRightWoodX = null
-							$('#rightWood').removeClass('show')
-						}else{
-							startLeftWoodX = null
-							$('#leftWood').addClass('show')
-						}
+				var rightShow = true;
+				$(".right").click(function() {
+					if(rightShow) {
+						$("#rightFront").addClass("show");
+						$("#rightBack").addClass("show");
+					} else {
+						$("#rightFront").removeClass("show");
+						$("#rightBack").removeClass("show");
 					}
+					rightShow = !rightShow;
 				});
-				
-				$("body").on("touchend", function(e) {
-					startRightWoodX = null;
-					startLeftWoodX = null;
+
+				var leftShow = true;
+				$(".left").click(function() {
+					if(leftShow) {
+						$("#leftFront").addClass("show");
+						$("#leftBack").addClass("show");
+					} else {
+						$("#leftFront").removeClass("show");
+						$("#leftBack").removeClass("show");
+					}
+					leftShow = !leftShow;
 				});
+
 			});
 		</script>
 
@@ -78,13 +69,10 @@
 				padding: 0;
 				height: 100%;
 				overflow: hidden;
-			}
-			
-			.container-fluid {
 				position: relative;
-				overflow: hidden;
 			}
 			
+		
 			#background1 {
 				/*定位*/
 				margin-left: 0;
@@ -94,55 +82,115 @@
 				/*position: absolute;*/
 			}
 			
-			#headAngle {
+			#leftBack {
 				/*定位*/
-				left: 32%;
-				top: 23%;
+				/*left: 11%;*/
+				left: -16%;
+				top: 37%;
 				/*大小*/
-				width: 36%;
-				height: 8%;
-				position: absolute;
-			}
-			
-			#leftWood {
-				/*定位*/
-				/*margin-left: 0%;*/
-				left: -31%;
-				top: 30%;
-				/*大小*/
-				width: 45%;
-				height: 23%;
+				width: 23%;
 				position: absolute;
 				transition: left .5s;
 			}
-			#leftWood.show{
-				left: -1%;
+			
+			#leftBack.show {
+				left: 11%
 			}
 			
-			#rightWood {
+			#leftFront {
 				/*定位*/
-				/*margin-left: 58%;*/
-				left: 88%;
-				top: 30%;
+				/*left: 16%;*/
+				left: -9%;
+				top: 42%;
 				/*大小*/
-				width: 45%;
-				height: 23%;
+				width: 23%;
 				position: absolute;
 				transition: left .5s;
 			}
-			#rightWood.show{
-				left: 58%;
+			
+			#leftFront.show {
+				left: 16%;
+			}
+			
+			#rightBack {
+				/*定位*/
+				/*left: 66%;*/
+				left: 95%;
+				top: 37%;
+				/*大小*/
+				width: 23%;
+				position: absolute;
+				transition: left .5s;
+			}
+			
+			#rightBack.show {
+				left: 66%;
+			}
+			
+			#rightFront {
+				/*定位*/
+				/*left: 56%;*/
+				left: 86%;
+				top: 42%;
+				/*大小*/
+				width: 23%;
+				position: absolute;
+				transition: left .5s;
+			}
+			
+			#rightFront.show {
+				left: 56%;
+			}
+			
+			#rightDown,
+			#rightDown-anim {
+				width: 30%;
+				bottom: 8%;
+				left: 68%;
+				position: absolute;
+			}
+			
+			#rightDown-anim {
+				display: none;
+			}
+			
+			body.rightDown-anim #rightDown {
+				display: none;
+			}
+			
+			body.rightDown-anim #rightDown-anim {
+				display: block;
+			}
+			
+			.body {
+				position: relative;
+				transform: translateY(calc(50vh - 50%));
+				max-width: 768px;
+				margin: auto;
+			}
+			
+			.top-color-block {
+				background: #3CBFC8;
+				height: 50%;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				max-width: 768px;
+				transform: translateX(calc(50vw - 50%));
 			}
 		</style>
-
 	</head>
 
 	<body>
-		<div class="container-fluid">
-			<img id="background1" class="img-responsive" src="img/trythetrash/background1.gif" alt="background1" />
-			<img id="headAngle" class="img-responsive" src="img/trythetrash/headAngle.gif" alt="headAngle" />
-			<img id="leftWood" class="img-responsive" src="img/trythetrash/leftWood.png" alt="leftWood" />
-			<img id="rightWood" class="img-responsive" src="img/trythetrash/rightWood.png" alt="rightWood" />
+		<div class="top-color-block"></div>
+		<div class="body">
+			<img id="background1" class="img-responsive" src="img/redBean/redbean-background.gif" alt="background1" />
+			<img id="leftBack" class="img-responsive left" src="img/redBean/left-back_2x.png" alt="leftBack" />
+			<img id="leftFront" class="img-responsive left" src="img/redBean/left-front_2x.png" alt="leftFront" />
+			<img id="rightBack" class="img-responsive right" src="img/redBean/right-back_2x.png" alt="rightBack" />
+			<img id="rightFront" class="img-responsive right" src="img/redBean/right-front_2x.png" alt="rightFront" />
+			<img id="rightDown" class="img-responsive" src="img/redBean/redjump-right_1.png" alt="rightDown" />
+			<img id="rightDown-anim" class="img-responsive" src="img/redBean/redjump-right.gif" alt="rightDown-anim" />
 		</div>
 	</body>
 

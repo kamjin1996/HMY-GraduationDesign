@@ -3,11 +3,10 @@
 <html>
 
 	<head>
-		<title>hmy520 Create By kam.</title>
+		<title>山药紫薯糕</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--由于移动设备的屏幕很小，在第一次打开网页时，有些浏览器可能不会按照响应式布局进行展示，而是按照原来页面的大小，用户可以通过滑动，或者缩放来调整页面位置，大小，这样我们的响应式开发就没有用处，加上这就话就是，页面加载后宽度和物理设备的宽度一致，并且无缩放-->
 
-		<!--<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!--由于IE浏览器并不能很好的支持bt，所以这就话的意思是告诉IE浏览器，用最新的渲染方式加载页面-->
 
@@ -16,7 +15,9 @@
 
 		<script src="jquery/jquery-3.3.1.min.js"></script>
 		<!--<script src="bootstrap/js/bootstrap.js"></script>-->
-
+        <!--<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>-->
+       
+       
 		<!--
 			作者：kamjin1996@163.com
 			时间：2019-04-26
@@ -25,27 +26,12 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				
-				var headAngleClick = true;
-				$("#headAngle").click(function() {
-					if(headAngleClick) {
-						$("#headAngle").attr("src", "img/purpleMedicine/top.gif")
-					} else if(!headAngleClick) {
-						$("#headAngle").attr("src", "img/purpleMedicine/top_1.png")
-					}
-					headAngleClick= !headAngleClick;
-
-				})
-				
-				var rightDownClick = true;
-				$("#rightDown").click(function() {
-					if(rightDownClick) {
-						$("#rightDown").attr("src", "img/purpleMedicine/rigntdown.gif")
-					} else if(!rightDownClick) {
-						$("#rightDown").attr("src", "img/purpleMedicine/rigntdown_1.png")
-					}
-					rightDownClick= !rightDownClick;
-
-				})
+				$("#headAngle,#headAngle-anim").click(function() {
+					$("body").toggleClass("headAngle-anim");
+				});
+				$("#rightDown,#rightDown-anim").click(function() {
+					$("body").toggleClass("rightDown-anim");
+				});
 
 				var startRightWoodX, startLeftWoodX;
 
@@ -104,10 +90,6 @@
 				position: relative;
 			}
 			
-			.container-fluid {
-				overflow: hidden;
-			}
-			
 			#background1 {
 				/*定位*/
 				margin-left: 0;
@@ -117,7 +99,7 @@
 				/*position: absolute;*/
 			}
 			
-			#headAngle {
+			#headAngle,#headAngle-anim {
 				/*定位*/
 				left: 32%;
 				top: 24%;
@@ -126,16 +108,25 @@
 		
 				position: absolute;
 			}
+			#headAngle-anim{
+				display: none;
+			}
+			body.headAngle-anim #headAngle{
+				display: none;
+			}
+			body.headAngle-anim #headAngle-anim{
+				display: block;
+			}
 			
 			#leftWood {
 				/*定位*/
 				/*margin-left: 0%;*/
 				left: -31%;
-				top: 30%;
+				top: 36%;
 				/*大小*/
 				width: 45%;
 				position: absolute;
-				transition: left .6s;
+				transition: left .5s;
 			}
 			
 			#leftWood.show {
@@ -146,11 +137,11 @@
 				/*定位*/
 				/*margin-left: 58%;*/
 				left: 88%;
-				top: 30%;
+				top: 36%;
 				/*大小*/
 				width: 45%;
 				position: absolute;
-				transition: left .6s;
+				transition: left .5s;
 			}
 			
 			#rightWood.show {
@@ -164,23 +155,53 @@
 				position: absolute;
 			}
 			
-			#rightDown_1 {
+			#rightDown-anim {
 				width: 30%;
 				bottom: 8%;
 				left: 68%;
 				position: absolute;
+			}
+			
+			#rightDown-anim{
+				display: none;
+			}
+			body.rightDown-anim #rightDown{
+				display: none;
+			}
+			body.rightDown-anim #rightDown-anim{
+				display: block;
+			}
+			
+			
+			.body{
+				position: relative;
+				transform: translateY(calc(50vh - 50%));
+				max-width: 768px;
+    			margin: auto;
+			}
+			.top-color-block{
+				background: #FDD43C;
+				height: 50%;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				max-width: 768px;
+				transform: translateX(calc(50vw - 50%));
 			}
 		</style>
 
 	</head>
 
 	<body>
-		<div class="container-fluid">
+		<div class="top-color-block"></div>
+		<div class="body">
 			<img id="background1" class="img-responsive" src="img/purpleMedicine/background.gif" alt="background1" />
 			<img id="headAngle" class="img-responsive" src="img/purpleMedicine/top_1.png" alt="headAngle" />
+			<img id="headAngle-anim" class="img-responsive" src="img/purpleMedicine/top.gif" alt="headAngle-anim" />
 			<img id="leftWood" class="img-responsive" src="img/purpleMedicine/leftWood-2x.png" alt="leftWood" />
 			<img id="rightWood" class="img-responsive" src="img/purpleMedicine/rightWood-2x.png" alt="rightWood" />
 			<img id="rightDown" class="img-responsive" src="img/purpleMedicine/rigntdown_1.png" alt="rightDown">
+			<img id="rightDown-anim" class="img-responsive" src="img/purpleMedicine/rigntdown.gif" alt="rightDown-anim">
 		</div>
 	</body>
 
