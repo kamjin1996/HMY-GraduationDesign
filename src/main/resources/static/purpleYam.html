@@ -3,21 +3,22 @@
 <html>
 
 	<head>
-		<title>山药紫薯糕</title>
+
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--由于移动设备的屏幕很小，在第一次打开网页时，有些浏览器可能不会按照响应式布局进行展示，而是按照原来页面的大小，用户可以通过滑动，或者缩放来调整页面位置，大小，这样我们的响应式开发就没有用处，加上这就话就是，页面加载后宽度和物理设备的宽度一致，并且无缩放-->
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!--由于IE浏览器并不能很好的支持bt，所以这就话的意思是告诉IE浏览器，用最新的渲染方式加载页面-->
 
+		<title>滑动或点击页面元素进行互动 山药紫薯糕</title>
 		<!-- Bootstrap -->
 		<!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
 
 		<script src="jquery/jquery-3.3.1.min.js"></script>
 		<!--<script src="bootstrap/js/bootstrap.js"></script>-->
-        <!--<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>-->
-       
-       
+		<!--<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>-->
+
 		<!--
 			作者：kamjin1996@163.com
 			时间：2019-04-26
@@ -25,7 +26,7 @@
 		-->
 		<script type="text/javascript">
 			$(document).ready(function() {
-				
+
 				$("#headAngle,#headAngle-anim").click(function() {
 					$("body").toggleClass("headAngle-anim");
 				});
@@ -48,29 +49,52 @@
 					if(!startX) return;
 					var X = e.originalEvent.changedTouches[0].pageX - startX;
 					console.log(X)
-					if(X < - 30) {
+					if(X < -30) {
 						if(startRightWoodX) {
 							startRightWoodX = null
-							$('#rightWood').addClass('show')
+							$('#rightWood').addClass('show');
+							$('#leftWood').addClass('show');
 						} else {
 							startLeftWoodX = null
-							$('#leftWood').removeClass('show')
+							$('#leftWood').removeClass('show');
+							$('#rightWood').removeClass('show');
 						}
 					} else if(X > 30) {
 						if(startRightWoodX) {
 							startRightWoodX = null
-							$('#rightWood').removeClass('show')
+							$('#leftWood').removeClass('show');
+							$('#rightWood').removeClass('show');
 						} else {
 							startLeftWoodX = null
-							$('#leftWood').addClass('show')
+							$('#rightWood').addClass('show');
+							$('#leftWood').addClass('show');
 						}
 					}
+					
+//					if(X < -30) {
+//						if(startRightWoodX) {
+//							startRightWoodX = null
+//							$('#rightWood').addClass('show')
+//						} else {
+//							startLeftWoodX = null
+//							$('#leftWood').removeClass('show')
+//						}
+//					} else if(X > 30) {
+//						if(startRightWoodX) {
+//							startRightWoodX = null
+//							$('#rightWood').removeClass('show')
+//						} else {
+//							startLeftWoodX = null
+//							$('#leftWood').addClass('show')
+//						}
+//					}
 				});
 
 				$("body").on("touchend", function(e) {
 					startRightWoodX = null;
 					startLeftWoodX = null;
 				});
+
 			});
 		</script>
 
@@ -99,22 +123,25 @@
 				/*position: absolute;*/
 			}
 			
-			#headAngle,#headAngle-anim {
+			#headAngle,
+			#headAngle-anim {
 				/*定位*/
 				left: 32%;
 				top: 24%;
 				/*大小*/
 				width: 38%;
-		
 				position: absolute;
 			}
-			#headAngle-anim{
+			
+			#headAngle-anim {
 				display: none;
 			}
-			body.headAngle-anim #headAngle{
+			
+			body.headAngle-anim #headAngle {
 				display: none;
 			}
-			body.headAngle-anim #headAngle-anim{
+			
+			body.headAngle-anim #headAngle-anim {
 				display: block;
 			}
 			
@@ -162,24 +189,26 @@
 				position: absolute;
 			}
 			
-			#rightDown-anim{
+			#rightDown-anim {
 				display: none;
 			}
-			body.rightDown-anim #rightDown{
+			
+			body.rightDown-anim #rightDown {
 				display: none;
 			}
-			body.rightDown-anim #rightDown-anim{
+			
+			body.rightDown-anim #rightDown-anim {
 				display: block;
 			}
 			
-			
-			.body{
+			.body {
 				position: relative;
 				transform: translateY(calc(50vh - 50%));
 				max-width: 768px;
-    			margin: auto;
+				margin: auto;
 			}
-			.top-color-block{
+			
+			.top-color-block {
 				background: #FDD43C;
 				height: 50%;
 				position: absolute;
@@ -200,8 +229,8 @@
 			<img id="headAngle-anim" class="img-responsive" src="img/purpleMedicine/top.gif" alt="headAngle-anim" />
 			<img id="leftWood" class="img-responsive" src="img/purpleMedicine/leftWood-2x.png" alt="leftWood" />
 			<img id="rightWood" class="img-responsive" src="img/purpleMedicine/rightWood-2x.png" alt="rightWood" />
-			<img id="rightDown" class="img-responsive" src="img/purpleMedicine/rigntdown_1.png" alt="rightDown">
-			<img id="rightDown-anim" class="img-responsive" src="img/purpleMedicine/rigntdown.gif" alt="rightDown-anim">
+			<img id="rightDown" class="img-responsive" src="img/purpleMedicine/rightdown_1.png" alt="rightDown">
+			<img id="rightDown-anim" class="img-responsive" src="img/purpleMedicine/rightdown.gif" alt="rightDown-anim">
 		</div>
 	</body>
 

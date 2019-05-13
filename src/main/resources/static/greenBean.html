@@ -3,13 +3,15 @@
 <html>
 
 	<head>
-		<title>抹茶绿豆糕</title>
+
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--由于移动设备的屏幕很小，在第一次打开网页时，有些浏览器可能不会按照响应式布局进行展示，而是按照原来页面的大小，用户可以通过滑动，或者缩放来调整页面位置，大小，这样我们的响应式开发就没有用处，加上这就话就是，页面加载后宽度和物理设备的宽度一致，并且无缩放-->
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!--由于IE浏览器并不能很好的支持bt，所以这就话的意思是告诉IE浏览器，用最新的渲染方式加载页面-->
-
+		
+		<title>滑动或点击页面元素进行互动 抹茶绿豆糕</title>
 		<!-- Bootstrap -->
 		<!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
 
@@ -61,7 +63,8 @@
 				/*position: absolute;*/
 			}
 			
-			#leaf,#leaf-anim {
+			#leaf,
+			#leaf-anim {
 				/*定位*/
 				left: 10%;
 				top: 33%;
@@ -69,13 +72,16 @@
 				width: 90%;
 				position: absolute;
 			}
-			#leaf-anim{
+			
+			#leaf-anim {
 				display: none;
 			}
-			body.leaf-anim #leaf{
+			
+			body.leaf-anim #leaf {
 				display: none;
 			}
-			body.leaf-anim #leaf-anim{
+			
+			body.leaf-anim #leaf-anim {
 				display: block;
 			}
 			
@@ -94,7 +100,8 @@
 				top: 99%;
 			}
 			
-			#rightDown,#rightDown-anim {
+			#rightDown,
+			#rightDown-anim {
 				/*定位*/
 				/*margin-left: 58%;*/
 				left: 72%;
@@ -104,22 +111,27 @@
 				position: absolute;
 				/*transition: left .5s;*/
 			}
-			#rightDown-anim{
+			
+			#rightDown-anim {
 				display: none;
 			}
-			body.rightDown-anim #rightDown{
+			
+			body.rightDown-anim #rightDown {
 				display: none;
 			}
-			body.rightDown-anim #rightDown-anim{
+			
+			body.rightDown-anim #rightDown-anim {
 				display: block;
 			}
-			.body{
+			
+			.body {
 				position: relative;
 				transform: translateY(calc(50vh - 50%));
 				max-width: 768px;
-    			margin: auto;
+				margin: auto;
 			}
-			.top-color-block{
+			
+			.top-color-block {
 				background: #FB5635;
 				height: 50%;
 				position: absolute;
@@ -131,7 +143,7 @@
 		</style>
 
 	</head>
-	
+
 	<body>
 		<div class="top-color-block"></div>
 		<div class="body">
